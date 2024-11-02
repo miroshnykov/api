@@ -50,7 +50,16 @@ mutation {
 }
 ```
 
-
-
-### API Setup
-1. Install dependencies:
+```
+CREATE TABLE `user` (
+	`id` INT NOT NULL AUTO_INCREMENT,
+	`firstName` VARCHAR(255) NOT NULL COLLATE 'utf8mb4_unicode_ci',
+	`lastName` VARCHAR(255) NOT NULL COLLATE 'utf8mb4_unicode_ci',
+	`email` VARCHAR(255) NOT NULL COLLATE 'utf8mb4_unicode_ci',
+	`password` VARCHAR(255) NOT NULL COLLATE 'utf8mb4_unicode_ci',
+	PRIMARY KEY (`id`) USING BTREE,
+	UNIQUE INDEX `email` (`email`) USING BTREE
+)
+COLLATE='utf8mb4_unicode_ci'
+ENGINE=InnoDB
+;
